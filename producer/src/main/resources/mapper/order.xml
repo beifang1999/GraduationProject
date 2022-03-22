@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="order">
+    <!--namespace对应某个命名空间，这样就知道去那个文件查找关联-->
+    <!--resultType：在SQL语句执行完成之后，会将每一个结果包装成指定的对象-->
+
+<!--    <resultMap id="orderMap" type="com.travel.producer.domain.Order">-->
+<!--        <result column="travel_member_adult" property="travelMemberAdult" />-->
+<!--        <result column="travel_member_baby" property="travelMemberBaby" />-->
+<!--        <result column="userRegion" property="userRegion" />-->
+<!--        <result column="product_fee" property="productFee" />-->
+<!--        <result column="product_price" property="productPrice" />-->
+<!--        <result column="product_traffic_grade" property="productTrafficGrade" />-->
+<!--        <result column="travel_member_yonger" property="travelMemberYonger" />-->
+<!--        <result column="product_traffic_type" property="productTrafficType" />-->
+<!--        <result column="product_pub" property="productPub" />-->
+<!--        <result column="order_ct" property="orderCt" />-->
+<!--        <result column="user_id" property="userId" />-->
+<!--        <result column="user_mobile" property="userMobile" />-->
+<!--        <result column="has_activity" property="hasActivity" />-->
+<!--        <result column="product_id" property="productId" />-->
+<!--        <result column="product_traffic" property="productTraffic" />-->
+<!--        <result column="order_id" property="orderId" />-->
+<!--    </resultMap>-->
+
+    <insert id="insert" parameterType="com.travel.producer.domain.Order"> insert into dwd_order (user_id,user_mobile,product_id,product_traffic,product_traffic_grade,product_traffic_type,
+        product_pub,travel_member_adult,travel_member_yonger,travel_member_baby,has_activity,order_id,order_ct) VALUES
+        (#{userId}, #{userMobile}, #{productId},#{productTraffic},#{productTrafficGrade},#{productTrafficType},
+         #{productPub},#{travelMemberAdult},#{travelMemberYonger},#{travelMemberBaby},#{hasActivity},#{orderId},#{orderCt});    <!--如果需要获取最后插入数据的ID，需要添加如下代码-->
+        <!--resultType返回值类型，keyProperty返回值绑定属性，order执行顺序，在插入语句之前还是之后-->
+<!--        <selectKey resultType="Integer" keyProperty="goodsId" order="AFTER">-->
+<!--            &lt;!&ndash;当前连接最后产生的ID号，回填到goodsId属性中&ndash;&gt;-->
+<!--            select last_insert_id()-->
+<!--        </selectKey>-->
+    </insert>
+
+
+</mapper>
