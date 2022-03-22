@@ -13,6 +13,7 @@ public class ProducerApplication {
 		ConfigurableApplicationContext context = SpringApplication.run(ProducerApplication.class, args);
 		MockTask mockTask = context.getBean(MockTask.class);
 
+		//传入 log 或 db 作为 flag 来控制模拟产生 哪一种数据
 		mockTask.mainTask("log",1000,1000,4);
 
 	}
