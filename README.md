@@ -1,5 +1,5 @@
 # GraduationProject
-这是一个私人毕设
+这是一个本科毕设
 
 produce 为数据产生模块
 
